@@ -5,18 +5,18 @@ import Button from "./components/Button/Button";
 import { useReducer, useMemo } from "react";
 
 const stateDefaultValue = {
-  todos: [],
+  list: [],
   counter: 1,
   isError: false,
 };
 
 const reducer = (state, action) => {
   let { type, payload } = action;
-  let { todos, isError, counter } = state;
+  let { list, isError, counter } = state;
 
   // Switch
   switch (type) {
-    case "AddPerson": {
+    case "AddTask": {
       console.log(todo);
       if (!todo.activity || !todo.date || !todo.time) {
         isError = true;
@@ -24,19 +24,19 @@ const reducer = (state, action) => {
         isError = false;
         let id = counter;
         counter++;
-        todos = [...todos, { ...todo, id: id }];
+        list = [...list, { ...todo, id: id }];
       }
     }
 
     case "deleteTask": {
-      todos = todos.filter((obj) => obj.id != payload);
+      list = list.filter((obj) => obj.id != payload);
     }
     default:
   }
 
   return {
     ...state,
-    todos: todos,
+    list: list,
     isError: isError,
     counter: counter,
   };
@@ -53,7 +53,7 @@ function App() {
   };
 
   const handleAddDispatch = () => {
-    dispatch({ type: "AddPerson" });
+    dispatch({ type: "AddTask" });
   };
 
   const handleDeleteDispatch = (e) => {
@@ -69,7 +69,7 @@ function App() {
         <Button onClick={handleAddDispatch}>Aggiungi</Button>
       </FormTodo>
 
-      {state.todos.map((obj, index) => {
+      {state.list.map((obj, index) => {
         return (
           <Todo
             key={"todo" + index}
