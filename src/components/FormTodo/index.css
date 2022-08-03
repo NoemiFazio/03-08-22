@@ -1,0 +1,30 @@
+.todo-input {
+  border: 1px solid #6e3ffd52;
+  border-radius: 30px;
+  max-width: 500px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  background-color: #a68df8;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.todo-input label {
+  text-align: start;
+  font-weight: bold;
+}
+.todo-input h2 {
+  margin: 0;
+}
+
+.todo-input input {
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.time__input,
+.date__input {
+  width: 40%;
+  display: inline;
+}

@@ -1,0 +1,16 @@
+.Todo {
+  border: 1px solid #6e3ffd52;
+  border-radius: 30px;
+  max-width: 500px;
+  margin-top: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20px auto;
+  background-color: #a68df8;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.Todo h3 {
+  text-align: start;
+}
